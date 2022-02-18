@@ -2,10 +2,10 @@ FROM ubuntu:22.04
 MAINTAINER Per-Arne Andersen <per.andersen@uia.no>
 # Needs JAVA_VERSION
 # Needs HADOOP_VERSION
-
+ENV JAVA_VERSION=11
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-      openjdk-$(JAVA_VERSION)-jdk \
+      openjdk-$JAVA_VERSION-jdk \
       net-tools \
       curl \
       netcat \
