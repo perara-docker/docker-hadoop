@@ -13,7 +13,7 @@ services:
 
   namenode:
     build:
-      context: ./namenode/
+      context: ./namenode
       args:
         - JAVA_VERSION=${JAVA_VERSION:-11}
         - HADOOP_VERSION=${HADOOP_VERSION:-3.1.1}
@@ -40,7 +40,7 @@ services:
 
   datanode:
     build:
-      context: ./datanode/
+      context: ./datanode
       args:
         - JAVA_VERSION=${JAVA_VERSION:-11}
         - HADOOP_VERSION=${HADOOP_VERSION:-3.1.1}
@@ -63,7 +63,7 @@ services:
 
   resourcemanager:
     build:
-      context: ./resourcemanager/
+      context: ./resourcemanager
       args:
         - JAVA_VERSION=${JAVA_VERSION:-11}
         - HADOOP_VERSION=${HADOOP_VERSION:-3.1.1}
@@ -90,7 +90,7 @@ services:
 
   nodemanager:
     build:
-      context: ./nodemanager/
+      context: ./nodemanager
       args:
         - JAVA_VERSION=${JAVA_VERSION:-11}
         - HADOOP_VERSION=${HADOOP_VERSION:-3.1.1}
@@ -111,7 +111,7 @@ services:
 
   historyserver:
     build:
-      context: ./historyserver/
+      context: ./historyserver
       args:
         - JAVA_VERSION=${JAVA_VERSION:-11}
         - HADOOP_VERSION=${HADOOP_VERSION:-3.1.1}
