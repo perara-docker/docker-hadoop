@@ -1,13 +1,7 @@
-[![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/big-data-europe/Lobby)
-
-# Changes
-
-Version 2.0.0 introduces uses wait_for_it script for the cluster startup
-
-# Hadoop Docker
+# Hadoop for docker
 
 ## Supported Hadoop Versions
-See repository branches for supported Hadoop versions
+* 3.1.1
 
 ## Quick Start
 
@@ -62,3 +56,6 @@ The available configurations are:
 * /etc/hadoop/mapred-site.xml  MAPRED_CONF
 
 If you need to extend some other configuration file, refer to base/entrypoint.sh bash script.
+
+# Credits
+* The original source code is based on [big-data-europe/docker-hadoop](https://github.com/big-data-europe/docker-hadoop)

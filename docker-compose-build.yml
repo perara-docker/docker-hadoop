@@ -3,12 +3,12 @@ version: '3'
 services:
   base:
     build: ./base
-    image: ghcr.io/perara-docker/hadoop/base:2.0.0-hadoop3.3.1-java11
+    image: ghcr.io/perara-docker/hadoop/base:hadoop${HADOOP_VERSION:-3.1.1}-java${JAVA_VERSION:-11}
 
 
   namenode:
     build: ./namenode/
-    image: ghcr.io/perara-docker/hadoop/namenode:2.0.0-hadoop3.3.1-java11
+    image: ghcr.io/perara-docker/hadoop/namenode:${HADOOP_VERSION:-3.1.1}-java${JAVA_VERSION:-11}
     networks:
       - hbase
     volumes:
@@ -31,7 +31,7 @@ services:
 
   datanode:
     build: ./datanode/
-    image: ghcr.io/perara-docker/hadoop/datanode:2.0.0-hadoop3.3.1-java11
+    image: ghcr.io/perara-docker/hadoop/datanode:${HADOOP_VERSION:-3.1.1}-java${JAVA_VERSION:-11}
     networks:
       - hbase
     volumes:
@@ -50,7 +50,7 @@ services:
 
   resourcemanager:
     build: ./resourcemanager/
-    image: ghcr.io/perara-docker/hadoop/resourcemanager:2.0.0-hadoop3.3.1-java11
+    image: ghcr.io/perara-docker/hadoop/resourcemanager:${HADOOP_VERSION:-3.1.1}-java${JAVA_VERSION:-11}
     networks:
       - hbase
     environment:
@@ -73,7 +73,7 @@ services:
 
   nodemanager:
     build: ./nodemanager/
-    image: ghcr.io/perara-docker/hadoop/nodemanager:2.0.0-hadoop3.3.1-java11
+    image: ghcr.io/perara-docker/hadoop/nodemanager:${HADOOP_VERSION:-3.1.1}-java${JAVA_VERSION:-11}
     networks:
       - hbase
     environment:
@@ -90,7 +90,7 @@ services:
 
   historyserver:
     build: ./historyserver/
-    image: ghcr.io/perara-docker/hadoop/historyserver:2.0.0-hadoop3.3.1-java11
+    image: ghcr.io/perara-docker/hadoop/historyserver:${HADOOP_VERSION:-3.1.1}-java${JAVA_VERSION:-11}
     networks:
       - hbase
     volumes:

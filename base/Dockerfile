@@ -1,11 +1,11 @@
 FROM ubuntu:22.04
-
-MAINTAINER Ivan Ermilov <ivan.s.ermilov@gmail.com>
-MAINTAINER Giannis Mouchakis <gmouchakis@iit.demokritos.gr>
 MAINTAINER Per-Arne Andersen <per.andersen@uia.no>
+# Needs JAVA_VERSION
+# Needs HADOOP_VERSION
+
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-      openjdk-11-jdk \
+      openjdk-$JAVA_VERSION-jdk \
       net-tools \
       curl \
       netcat \
@@ -18,7 +18,7 @@ RUN curl -O https://dist.apache.org/repos/dist/release/hadoop/common/KEYS
 
 RUN gpg --import KEYS
 
-ENV HADOOP_VERSION=3.3.1
+
 # base URL for downloads: the name of the tar file depends
 # on the target platform (amd64/x86_64 vs. arm64/aarch64)
 ENV HADOOP_BASE_URL=https://www.apache.org/dist/hadoop/common/hadoop-$HADOOP_VERSION

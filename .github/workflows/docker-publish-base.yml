@@ -36,20 +36,20 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        
-      # Log into github registry    
+
+      # Log into github registry
       - name: Log into registry
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin  
- 
-      # Build the images    
-      - name: Build the docker-compose stack  
-        run: docker-compose -f docker-compose-v3.yml build
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      # Build the images
+      - name: Build the docker-compose stack
+        run: docker-compose -f docker-compose-build.yml build
 
       # List images
       - name: List images
         run: docker images
-    
+
       # Push images
       - name: Push images
-        run: docker-compose -f docker-compose-v3.yml push --ignore-push-failures
-    
+        run: docker-compose -f docker-compose-build.yml push --ignore-push-failures
+
