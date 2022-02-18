@@ -1,8 +1,14 @@
 version: '3'
 
 services:
+  base:
+    build: ./base
+    image: ghcr.io/perara-docker/hadoop/base:2.0.0-hadoop3.3.1-java11
+
+
   namenode:
-    image: bde2020/hadoop-namenode:2.0.0-hadoop3.3.1-java11
+    build: ./namenode/
+    image: ghcr.io/perara-docker/hadoop/namenode:2.0.0-hadoop3.3.1-java11
     networks:
       - hbase
     volumes:
@@ -24,7 +30,8 @@ services:
         traefik.port: 50070
 
   datanode:
-    image: bde2020/hadoop-datanode:2.0.0-hadoop3.3.1-java11
+    build: ./datanode/
+    image: ghcr.io/perara-docker/hadoop/datanode:2.0.0-hadoop3.3.1-java11
     networks:
       - hbase
     volumes:
@@ -42,7 +49,8 @@ services:
         traefik.port: 50075
 
   resourcemanager:
-    image: bde2020/hadoop-resourcemanager:2.0.0-hadoop3.3.1-java11
+    build: ./resourcemanager/
+    image: ghcr.io/perara-docker/hadoop/resourcemanager:2.0.0-hadoop3.3.1-java11
     networks:
       - hbase
     environment:
@@ -64,7 +72,8 @@ services:
       disable: true
 
   nodemanager:
-    image: bde2020/hadoop-nodemanager:2.0.0-hadoop3.3.1-java11
+    build: ./nodemanager/
+    image: ghcr.io/perara-docker/hadoop/nodemanager:2.0.0-hadoop3.3.1-java11
     networks:
       - hbase
     environment:
@@ -80,7 +89,8 @@ services:
         traefik.port: 8042
 
   historyserver:
-    image: bde2020/hadoop-historyserver:2.0.0-hadoop3.3.1-java11
+    build: ./historyserver/
+    image: ghcr.io/perara-docker/hadoop/historyserver:2.0.0-hadoop3.3.1-java11
     networks:
       - hbase
     volumes:
@@ -107,4 +117,5 @@ volumes:
 networks:
   hbase:
     external:
-      name: hbase
+      name: ikt433
+

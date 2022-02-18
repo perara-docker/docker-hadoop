@@ -1,5 +1,5 @@
 ARG HADOOP_BASE_VERSION=2.0.0-hadoop3.3.1-java11
-FROM ghcr.io/hadoop-base:$HADOOP_BASE_VERSION
+FROM ghcr.io/perara-docker/hadoop/base:$HADOOP_BASE_VERSION
 
 MAINTAINER Ivan Ermilov <ivan.s.ermilov@gmail.com>
 
