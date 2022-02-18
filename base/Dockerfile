@@ -1,7 +1,8 @@
-FROM debian:10
+FROM ubuntu:22.04
 
 MAINTAINER Ivan Ermilov <ivan.s.ermilov@gmail.com>
 MAINTAINER Giannis Mouchakis <gmouchakis@iit.demokritos.gr>
+MAINTAINER Per-Arne Andersen <per.andersen@uia.no>
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
       openjdk-11-jdk \
@@ -12,7 +13,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
       libsnappy-dev \
       libssl-dev \
     && rm -rf /var/lib/apt/lists/*
-      
+
 RUN curl -O https://dist.apache.org/repos/dist/release/hadoop/common/KEYS
 
 RUN gpg --import KEYS
