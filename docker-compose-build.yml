@@ -7,7 +7,7 @@ services:
       args:
         - JAVA_VERSION=${JAVA_VERSION:-11}
         - HADOOP_VERSION=${HADOOP_VERSION:-3.1.1}
-    image: ghcr.io/perara-docker/hadoop/base:hadoop${HADOOP_VERSION:-3.1.1}-java${JAVA_VERSION:-11}
+    image: ghcr.io/perara-docker/hadoop/base:${HADOOP_VERSION:-3.1.1}-java${JAVA_VERSION:-11}
 
 
 
