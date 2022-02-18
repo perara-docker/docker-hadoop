@@ -1,6 +1,6 @@
 ARG JAVA_VERSION
 ARG HADOOP_VERSION
-FROM ghcr.io/perara-docker/hadoop/base:hadoop$HADOOP_VERSION-java$JAVA_VERSION
+FROM ghcr.io/perara-docker/hadoop/base:$HADOOP_VERSION-java$JAVA_VERSION
 
 MAINTAINER Per-Arne Andersen <per.andersen@uia.no>
 
