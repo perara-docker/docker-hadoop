@@ -5,7 +5,7 @@ MAINTAINER Per-Arne Andersen <per.andersen@uia.no>
 
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-      openjdk-$JAVA_VERSION-jdk \
+      openjdk-$(JAVA_VERSION)-jdk \
       net-tools \
       curl \
       netcat \
